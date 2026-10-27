@@ -1,0 +1,27 @@
+[profile.default]
+src = "."
+test = "."
+script = "scripts"
+out = "out"
+libs = ["lib"]
+solc = "0.8.28"
+evm_version = "prague"
+optimizer = true
+optimizer_runs = 200
+via_ir = false
+fs_permissions = []
+# Tasks live in numbered directories at the repository root; libraries are
+# compiled only when imported.
+skip = ["lib/**"]
+
+[fuzz]
+runs = 256
+
+[invariant]
+runs = 64
+depth = 32
+fail_on_revert = false
+
+[fmt]
+line_length = 100
+tab_width = 4
